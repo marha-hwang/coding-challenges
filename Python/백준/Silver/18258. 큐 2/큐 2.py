@@ -1,11 +1,9 @@
 import sys
 from collections import deque
 
-#연산횟수 입력받기
 n = int(sys.stdin.readline())
 que = deque()
 
-#입력받은 연산횟수 만큼 반복
 for i in range(n):
     str = sys.stdin.readline()
     arr = str.split()
