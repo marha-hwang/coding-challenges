@@ -13,15 +13,14 @@ class Q9046{
         solution(arr: arr)
     }
     
-    func solution(arr:[String]){
+   func solution(arr:[String]){
         
         arr.forEach{
             var dict:[Character:Int] = [:]
             $0.forEach{ char in
-                
                 guard char != " " else{return}
                 
-                if dict[char] == nil{ dict[char] = 1 }
+                if !dict.contains{$0.key == char}{ dict[char] = 1 }
                 else { dict[char]! += 1 }
             }
             
