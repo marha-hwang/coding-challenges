@@ -16,13 +16,13 @@ class Q1991{
     
     func solution(tree:[String:[String]]){
         preorder(now: "A")
-        printResult()
+        print()
         
         inorder(now: "A")
-        printResult()
+        print()
         
         postorder(now: "A")
-        printResult()
+        print()
     }
     
     /*
@@ -31,7 +31,7 @@ class Q1991{
      */
     func preorder(now:String){
         
-        result.append(now)
+        print(now, terminator: "")
         if tree[now]![0] != "." { preorder(now: tree[now]![0]) }
         if tree[now]![1] != "." { preorder(now: tree[now]![1]) }
     }
@@ -39,7 +39,7 @@ class Q1991{
     func inorder(now:String){
         
         if tree[now]![0] != "." { inorder(now: tree[now]![0]) }
-        result.append(now)
+        print(now, terminator: "")
         if tree[now]![1] != "." { inorder(now: tree[now]![1]) }
     }
     
@@ -47,15 +47,7 @@ class Q1991{
         
         if tree[now]![0] != "." { postorder(now: tree[now]![0]) }
         if tree[now]![1] != "." { postorder(now: tree[now]![1]) }
-        result.append(now)
+        print(now, terminator: "")
     }
     
-    func printResult(){
-        result[0..<result.count-1].forEach{
-            print($0, terminator: "")
-        }
-        print(result[result.count-1])
-        
-        result = []
-    }
 }
